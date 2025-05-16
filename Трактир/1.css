@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #5d3a29;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d2b48c;
+    color: #fff;
+    padding: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.contact-info p {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.sub-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin: 20px 0; /* Отступ между заголовком и кнопками */
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #a0522d; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    display: inline-block; /* Чтобы кнопки были выровнены правильно */
+}
+
+.action-button:hover {
+    background-color: #8b4513; 
+}
+
+.toggle-checkbox {
+    display: none; /* Скрываем checkbox */
+}
+
+.advantages-text {
+    display: none; /* Скрываем текст преимуществ по умолчанию */
+    text-align: left; /* Выравнивание текста */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.toggle-checkbox:checked + label + .advantages-text {
+    display: block; /* Показываем текст преимуществ, если чекбокс отмечен */
+}
+
+.about-us {
+    margin-top: 40px; /* Отступ сверху от основной части */
+}
+
+.about-title {
+    font-size: 28px;
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.separator {
+    border: none; /* Убираем стандартные стили, если они есть */
+    height: 2px; /* Толщина линии */
+    background-color: #5d3a29; /* Цвет линии (темно-коричневый) */
+    margin: 20px auto; /* Отступы сверху и снизу, центрируем линию */
+    width: 80%; /* Ширина линии (можно изменить по желанию) */
+}
+
+.separator.darker {
+    background-color: #4b2c23; /* Темнее коричневый цвет для второй линии */
+}
+
+.images-container {
+    display: flex;
+    justify-content: center; /* Выравнивание изображений по центру */
+    gap: 20px; /* Промежуток между изображениями */
+}
+
+.about-image {
+    width: 500px; /* Увеличенная ширина изображений */
+    height: 400px; /* Увеличенная высота изображений */
+    object-fit: cover; /* Обрезка изображения по размеру для его завершенности */
+}
+
+/* Стили для новой секции с фотографиями и текстом */
+.photo-text-section {
+    display: flex; /* Flexbox для расположения колонок */
+    justify-content: center; /* Выравнивание по центру */
+    gap: 20px; /* Промежутки между колонками */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.photo-container {
+    text-align: center; /* Центрируем текст под фотографией */
+}
+
+.photo-image {
+    width: 300px; /* Ширина фотографий */
+    height: 200px; /* Высота фотографий */
+    object-fit: cover; /* Обрезка изображения по размеру для его завершенности */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #d2b48c; /* Светло-коричневый фон футера */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center; /* Выравнивание заголовка по центру */
+}
+.photo{
+    width: 450px; /* Ширина фотографий */
+    height: 400px; /* Высота фотографий */
+    object-fit: cover; /* Обрезка изображения по размеру для его завершенности */
+}

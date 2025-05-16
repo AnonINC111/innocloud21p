@@ -1,0 +1,513 @@
+/* style.css - УЛУЧШЕННАЯ ВЕРСИЯ */
+
+/* Сброс базовых стилей */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Будем использовать веб-шрифты позже */
+    line-height: 1.6;
+    color: #333; /* Основной цвет текста */
+    background-color: #F5F5DC; /* Светло-бежевый фон */
+}
+h1, h2, section h2 {
+    /* ... другие стили */
+    font-family: 'Playfair Display', serif;
+}
+
+/* Подключение Google Fonts (пример - нужно выбрать подходящие шрифты) */
+/* Вставьте этот код в секцию <head> вашего HTML файла, перед подключением style.css */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+*/
+/* После подключения, можно использовать: font-family: 'Playfair Display', serif; для заголовков и font-family: 'Roboto', sans-serif; для текста */
+/* Стилизация изображений внутри секций (кроме галереи) */
+.section-image {
+    display: block; /* Делаем изображение блочным элементом */
+    max-width: 400px; /* Максимальная ширина изображения (можно настроить) */
+    height: auto; /* Сохраняем пропорции */
+    margin-bottom: 20px; /* Отступ снизу */
+    border: 3px solid #DAA520; /* Добавляем рамку как у логотипа */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+    /* transition: transform 0.3s ease; // Можно добавить эффект при наведении */
+    /* Новые стили для лучшего обтекания */
+    box-sizing: border-box; /* Учитываем рамку и padding в размере элемента */
+}
+
+.section-image.right-float {
+    float: right; /* Выравнивание по правому краю */
+    margin-left: 30px; /* Отступ слева от изображения */
+    margin-bottom: 20px; /* Добавляем отступ снизу явно для обтекающих элементов */
+}
+
+.section-image.left-float {
+    float: left; /* Выравнивание по левому краю */
+    margin-right: 30px; /* Отступ справа от изображения */
+     margin-bottom: 20px; /* Добавляем отступ снизу явно для обтекающих элементов */
+}
+
+.section-image.centered {
+    display: block; /* Убеждаемся, что блочный */
+    margin: 20px auto; /* Центрирование по горизонтали с отступом сверху/снизу */
+}
+
+/* Улучшенная очистка float */
+/* Добавляем очистку float к элементам, которые идут сразу после плавающих изображений */
+/* Найдем параграфы, которые идут сразу после плавающих изображений */
+.section-image.right-float + p,
+.section-image.left-float + p,
+.section-image.right-float + ul,
+.section-image.left-float + ul {
+    clear: both; /* Очищаем float */
+    margin-top: 0; /* Убираем лишний верхний отступ, если он появился */
+}
+
+/* Можно также добавить очистку после контейнера, если есть риск */
+section .container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Медиа-запросы для адаптивности изображений в секциях */
+@media (max-width: 768px) {
+    .section-image {
+        float: none !important; /* Отключаем обтекание на маленьких экранах */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%; /* Уменьшаем максимальную ширину */
+        margin-bottom: 20px;
+    }
+
+     .section-image.centered {
+         margin: 20px auto; /* Центрирование остается */
+     }
+
+     /* Убираем очистку float на мобильных, так как float отключен */
+     .section-image.right-float + p,
+     .section-image.left-float + p,
+     .section-image.right-float + ul,
+     .section-image.left-float + ul {
+         clear: none;
+     }
+}
+}
+/* Контейнер для центрирования контента */
+.container {
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование блока */
+    padding: 0 20px; /* Отступы по бокам на мобильных */
+}
+
+
+/* Базовые стили для секций */
+section {
+    padding: 80px 0; /* Увеличенные внутренние отступы сверху и снизу */
+    /*border-bottom: 1px solid #ddd; /* Пример разделителя между секциями */
+}
+
+/* Добавляем легкое чередование цветов фона для секций */
+section:nth-of-type(even) { /* Каждая вторая секция */
+    background-color: #FFDEAD; /* Более темный бежевый */
+}
+
+section:nth-of-type(odd) { /* Каждая первая секция */
+    background-color: #fff; /* Белый */
+}
+
+
+/* Стилизация шапки сайта */
+header {
+    background-color: #CD853F; /* Коричневый фон шапки */
+    color: #fff; /* Белый текст в шапке */
+    padding: 30px 0; /* Увеличенные отступы */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень под шапкой */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 120px; /* Увеличенная максимальная ширина логотипа */
+    height: auto;
+    margin-bottom: 15px;
+    /* Добавляем немного стиля к логотипу */
+    border: 3px solid #DAA520; /* Золотистая рамка */
+    border-radius: 50%; /* Если логотип круглый, сделайте его круглым */
+    padding: 5px;
+    background-color: #fff; /* Белый фон под логотипом */
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+    font-size: 3em; /* Увеличенный размер заголовка */
+    font-family: 'Playfair Display', serif; /* Пример исторического шрифта */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тень для читаемости */
+}
+
+header h2 {
+     margin: 0 0 15px 0;
+    font-size: 1.8em; /* Увеличенный размер подзаголовка */
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+header .tagline {
+    font-size: 1.4em; /* Увеличенный размер слогана */
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+header .date-time-location {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Стили первого экрана (Hero Section) */
+.hero {
+    background-image: url('p2.jpg'); /* Замените на путь к вашему фоновому изображению */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px; /* Большие отступы */
+    position: relative;
+}
+
+/* Темное наслоение на фоне для читаемости текста */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Более темное наслоение */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero .hero-content {
+    /* Дополнительные стили для блока с текстом на первом экране */
+    max-width: 800px; /* Ограничиваем ширину текста */
+    margin: 0 auto; /* Центрируем блок с текстом */
+}
+
+
+.hero h2 {
+     font-size: 3.5em; /* Увеличенный размер заголовка Hero */
+     margin-bottom: 25px;
+     font-family: 'Playfair Display', serif;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+}
+
+.hero p {
+    font-size: 1.4em; /* Увеличенный размер текста Hero */
+    margin-bottom: 40px;
+}
+
+/* Базовые стили для заголовков секций */
+section h2 {
+    text-align: center;
+    margin-bottom: 50px; /* Увеличенный отступ снизу */
+    font-size: 2.5em; /* Увеличенный размер заголовка */
+    color: #F4A460; /* Темно-красный цвет заголовков */
+    font-family: 'Playfair Display', serif;
+    position: relative; /* Для возможного декоративного элемента под заголовком */
+}
+
+/* Добавляем декоративную линию под заголовками секций */
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Ширина линии */
+    height: 3px; /* Толщина линии */
+    background-color: #DAA520; /* Золотистый цвет линии */
+    margin: 15px auto 0; /* Отступ сверху и центрирование */
+}
+
+
+/* Стилизация секции "О Фестивале" - теперь с фоновым изображением */
+#about {
+
+    /* background-image: url('путь_к_вашему_фоновому_фото_о_фестивале.jpg'); /* Замените на путь к вашему фото */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* color: #333; */
+    /* padding: 60px 0; */
+    /* position: relative; */
+     /* Если решили не использовать фоновое изображение для этой секции, оставляем только цвет фона */
+     background-color: #fff; /* Белый фон */
+     padding: 0px 0;
+}
+.section-image.fullscreen {
+    display: block;
+    width: 100%; /* Растягивает изображение по ширине */
+    height: auto; /* Сохраняет исходные пропорции */
+    margin: 0 auto; /* Горизонтальное выравнивание */
+    object-fit: contain; /* Масштабирует изображение целиком */
+    overflow: hidden; /* Скрывает выходящие части изображения */
+}
+
+/* Обеспечиваем правильную работу на небольших экранах */
+@media (max-width: 768px) {
+    .section-image.fullscreen {
+        max-width: 100vw; /* Полностью заполняет экран на мобильных устройствах */
+    }
+}
+
+/* Добавляем полупрозрачный фон для контейнера в about, если используется фоновое изображение секции */
+/* Если фоновое изображение используется для секции #about, раскомментируйте этот блок */
+/*
+#about .container {
+    background-color: rgba(255, 255, 255, 0.9); // Более плотный белый полупрозрачный фон
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+*/
+
+
+#about p {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+/* Стилизация секции "Блюда" и "Программа" (списки) */
+#food ul, #program ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px; /* Отступ снизу от списков */
+}
+
+#food li, #program li {
+    margin-bottom: 12px; /* Увеличенный отступ между пунктами */
+    font-size: 1.2em; /* Увеличенный размер текста */
+    /* Добавляем иконку маркера (опционально) */
+    /* list-style-image: url('путь_к_вашей_иконке.png'); */
+}
+
+/* Стилизация секции "Для Кого?" */
+#audience {
+    /* background-color: #F5F5DC; // Цвет фона уже задан чередованием */
+    text-align: center;
+}
+#audience p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #8B4513; /* Коричневый цвет текста */
+}
+
+
+/* Стилизация Галереи */
+#gallery {
+     /* background-color: #fff; // Цвет фона уже задан чередованием */
+}
+
+#gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Немного больший минимальный размер колонок */
+    gap: 20px; /* Увеличенное расстояние между изображениями */
+}
+
+#gallery .gallery-grid img {
+    display: block;
+    width: 100%;
+    height: 250px; /* Фиксированная высота изображений в галерее (можно настроить) */
+    object-fit: cover;
+    border: 4px solid #fff; /* Белая рамка */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Более выраженная тень */
+    transition: transform 0.3s ease; /* Плавный эффект при наведении */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+#gallery .gallery-grid img:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+
+/* Стилизация Отзывов */
+#testimonials {
+     /* background-color: #f9f9f9; // Цвет фона уже задан чередованием */
+}
+
+#testimonials .review {
+    margin-bottom: 30px;
+    padding: 25px; /* Увеличенные отступы внутри отзыва */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Более скругленные углы */
+    background-color: #fff; /* Белый фон для каждого отзыва */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Для возможного элемента цитаты */
+}
+
+/* Добавляем декоративный элемент "кавычки" (опционально) */
+/*
+#testimonials .review::before {
+    content: '\201C'; // Левая кавычка
+    font-size: 4em;
+    color: rgba(139, 69, 19, 0.5); // Полупрозрачный коричневый
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.5;
+    line-height: 1;
+}
+*/
+
+#testimonials .review .author {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #800000; /* Темно-красный цвет для имени автора */
+    font-size: 1.1em;
+}
+
+#testimonials .review p {
+    margin: 0;
+    font-style: italic; /* Курсив для текста отзыва (опционально) */
+}
+
+/* Стилизация Контактов */
+#contact {
+    text-align: center;
+     /* background-color: #F5F5DC; // Цвет фона уже задан чередованием */
+}
+
+#contact p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#contact a {
+    color: #800000; /* Темно-красный цвет ссылок */
+    text-decoration: none;
+    border-bottom: 1px solid #800000; /* Подчеркивание ссылок */
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #DAA520; /* Золотистый при наведении */
+    border-color: #DAA520;
+}
+
+.social-links {
+    margin-top: 25px; /* Увеличенный отступ сверху */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px; /* Увеличенное расстояние между ссылками */
+    font-size: 1.3em; /* Увеличенный размер текста ссылки */
+    /* Можно добавить иконки вместо текста */
+}
+
+
+/* Стилизация Подвала */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0; /* Увеличенные отступы */
+    font-size: 1em;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.4em;
+    }
+
+     header .logo img {
+        max-width: 80px;
+     }
+
+
+    .hero h2 {
+        font-size: 2.8em;
+    }
+
+     .hero p {
+        font-size: 1.2em;
+     }
+
+
+    section {
+        padding: 50px 0; /* Уменьшенные отступы на мобильных */
+    }
+
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    #gallery .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Меньше минимальный размер колонок */
+        gap: 10px; /* Уменьшенное расстояние */
+    }
+
+     #gallery .gallery-grid img {
+        height: 180px; /* Меньше высота изображений */
+     }
+
+
+    #testimonials .review {
+        padding: 15px;
+    }
+
+    #testimonials .review .author {
+        font-size: 1em;
+    }
+
+     #contact p, #contact a, .social-links a {
+        font-size: 1em;
+     }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+     .hero p {
+        font-size: 1em;
+     }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    #gallery .gallery-grid {
+        grid-template-columns: 1fr; /* Одна колонка на очень маленьких экранах */
+    }
+
+     #gallery .gallery-grid img {
+        height: auto; /* Высота авто на одной колонке */
+     }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Фестиваль "Арзамасский трактирщикъ"</h1>
+            <img src="трактир.jpg" alt="Логотип" class="logo-image">
+        </div>
+        <div class="contact-info">
+            <p>Телефон: 8 (831) 477 57 29.</p>
+            <p>Сайт: <a href="https://vk.com/arzamas_traktir">arzamas.fun/arzamas_traktir</a></p>
+        </div>
+    </header>
+    
+    <main>
+        <h2 class="main-title">Добро пожаловать на наш сайт!</h2>
+        <p class="sub-title">Ваш надежный партнер в бизнесе.</p>
+        <div class="button-container">
+            <a href="https://vk.com/arzamas_traktir" class="action-button">Связаться с нами</a>
+        </div>
+        
+        <hr class="separator"> <!-- линия отделения -->
+        <section class="about-us">
+            <h2 class="about-title">О нас</h2>
+            <div class="images-container">
+                <img src="1.jpg" alt="Изображение 1" class="about-image">
+                <img src="2.jpg" alt="Изображение 2" class="about-image">
+                <img src="3.jpg" alt="Изображение 3" class="about-image">
+            </div>
+            <hr class="separator darker"> <!-- темная линия отделения -->
+        </section>
+
+        <section class="advantages">
+            <h2 class="about-title">Наши преимущества</h2>
+            <div class="photo-text-section">
+                <div class="photo-container">
+                    <img src="4.jpg" alt="Фотография 1" class="photo-image">
+                </div>
+                <div class="photo-container">
+                    <img src="5.jpg" alt="Фотография 2" class="photo-image">
+                </div>
+                <div class="photo-container">
+                    <img src="6.jpg" alt="Фотография 3" class="photo-image">
+                </div>
+            </div>
+            <p>Становитесь частью большой гастрономической семьи вместе с фестивалем "Арзамасский Трактирщик".
+            17 Мая в Арзамасе Нижегородской области состоится пятый в истории города гастрономический фестиваль "Арзамасский трактирщик".
+            В кафе-участниках мероприятия можно будет попробовать блюда «трактирщика». Просим всех подключиться к выбору самого народного блюда и голосовать, сканируя QR-код в кафе.
+            Приглашаем всех желающих окунуться в атмосферу «золотого века Арзамаса».
+            </p>
+        </section>
+        
+        <!-- Чекбокс для управления видимостью текста -->
+        <input type="checkbox" id="toggle-advantages" class="toggle-checkbox">
+        <label for="toggle-advantages" class="action-button">Узнать больше</label>
+
+        <!-- Блок с преимуществами, по умолчанию скрыт -->
+        <div class="advantages-text">
+            <p>Наши преимущества:</p>
+            <ul>
+                <li>Качественная еда</li>
+                <li>Отличный сервис</li>
+                <li>Уникальная атмосфера</li>
+                <li>Аутентичные рецепты</li>
+                 <div class="photo-container">
+                    <img src="7.jpg" alt="Фотография 3" class="photo">
+                </div>
+            </ul>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>© 2023 Моя компания. Все права защищены.</p>
+    </footer>
+</body>
+</html>
